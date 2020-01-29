@@ -1,2 +1,8 @@
+# ide
 .idea/*
+
+# libs
 node_modules/*
+
+# python
+__pycache__/
