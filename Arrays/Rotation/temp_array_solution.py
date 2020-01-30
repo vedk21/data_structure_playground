@@ -1,4 +1,7 @@
 # Array rotation using temperory array technique
+# n size of the array and d is the rotation by count
+# Time Complexity: O(n)
+# Auxiliary Space Complexity: O(d)
 def rotate(arr, size, rotateBy):
     if size > 0:
         tempArr = []

@@ -1,4 +1,7 @@
 # Array rotation by moving element one by one technique
+# n size of the array and d is the rotation by count
+# Time Complexity: O(n * d)
+# Auxiliary Space Complexity: O(1)
 def rotate(arr, size, rotateBy):
     if size > 0:
         # repeat the process for number of rotation
