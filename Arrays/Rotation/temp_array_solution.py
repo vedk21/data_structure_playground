@@ -3,7 +3,7 @@
 # Time Complexity: O(n)
 # Auxiliary Space Complexity: O(d)
 def rotate(arr, size, rotateBy):
-    if size > 0:
+    if (size > 0) and (rotateBy % size != 0):
         tempArr = []
         # add elements into temp array of size 'rotateBy'
         for i in range(0, rotateBy):
@@ -22,6 +22,4 @@ def rotate(arr, size, rotateBy):
             arr[i] = tempArr[tempIndex]
             tempIndex += 1
 
-        return arr
-    else:
-        return []
+    return arr
