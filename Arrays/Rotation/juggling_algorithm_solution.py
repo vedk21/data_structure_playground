@@ -14,10 +14,17 @@ def rotate(arr, size, rotateBy):
         sets = gcd(size, rotateBy)
         for i in range(sets):
             temp = arr[i]
-            iteration = i
-            # repeat for all i + rotateBy elements until the end of array
-            while((iteration + rotateBy) < size):
-                arr[iteration] = arr[iteration + rotateBy]
-                iteration = iteration + rotateBy
-            arr[iteration] = temp
+            j = i
+            while True:
+                # move pivot to left of j by rotateBy count
+                pivot = (j + rotateBy) % size
+
+                # if reached to the same position from where stated the set break out the loop
+                if pivot == i:
+                    break
+
+                arr[j] = arr[pivot]
+                j = pivot
+
+            arr[j] = temp
     return arr
