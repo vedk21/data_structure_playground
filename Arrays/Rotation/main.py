@@ -1,9 +1,10 @@
+#Left rotation imports
 from Left.temp_array_solution import rotate as tempRotate
 from Left.rotate_one_by_one_solution import rotate as oneByOneRotate
 from Left.juggling_algorithm_solution import rotate as jugglingRotate
 from Left.reversal_algorithm_solution import rotate as reversalRotate
 
-# cyclic rotation import
+# cyclic rotation imports
 from Cyclic.cyclic_rotation_solution import cyclicRotate
 
 # main function to try and understand different rotation techniques on array
