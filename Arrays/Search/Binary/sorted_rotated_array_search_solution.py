@@ -3,6 +3,7 @@ from math import floor
 # Search on sorted as well as rotated array using binary search
 # Time Complexity: O(log n)
 # Auxiliary Space Complexity: O(1)
+######### NOTE: This algorithm will not work if all elements in the array are not distinct ######### 
 def search(arr, startIndex, endIndex, key):
     if startIndex <= endIndex:
         # calculate mid of the arr
