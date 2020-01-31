@@ -3,15 +3,13 @@
 # Time Complexity: O(n)
 # Auxiliary Space Complexity: O(1)
 def findMaxSum(arr, size):
-    # calculate sum of all array elements
     sum = 0
+    currentRotationSum = 0
+    # calculate sum of all array elements
     for i in range(size):
         sum += arr[i]
-    
-    # calculate i * arr[i] for no rotation (R0)
-    currentRotationSum = 0
-    for i in range(size):
-        currentRotationSum += i * arr[i]
+        # calculate i * arr[i] for no rotation (R0)
+        currentRotationSum += i * arr[i]    
     
     maxRotationSum = currentRotationSum
     maxSumRotation = 0
