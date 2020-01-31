@@ -4,8 +4,11 @@ from Binary.sorted_rotated_array_search_solution import search as rotatedBinaryS
 # Pair of sum imports
 from PairSum.sorted_rotated_array_pair_of_sum_solution import findPairOfSum, findAllPairOfSum
 
+# Max sum for rotation imports
+from MaxSum.max_sum_for_all_rotation_solution import findMaxSum
+
 if __name__ == '__main__':
-    arr = [ 4, 7, 8, 1, 3]
+    arr = [4, 7, 8, 1, 3]
     key = 4
     sum = 11
     print(f'Original Array: {arr}')
@@ -24,3 +27,8 @@ if __name__ == '__main__':
     # Technique 1
     pairIndexes = findAllPairOfSum(list(arr), len(arr), sum)
     print(f'Pairs of indexes matching sum={sum} in array ([-1, -1] if not found): {pairIndexes}')
+
+    # Find max sum for all rotation on array
+    # Technique 1
+    maxRotationSum = findMaxSum(list(arr), len(arr))
+    print(f'Max sum for all rotation and number of rotation required in array: {maxRotationSum}')
