@@ -5,10 +5,15 @@ from Binary.sorted_rotated_array_search_solution import search as rotatedBinaryS
 from PairSum.sorted_rotated_array_pair_of_sum_solution import findPairOfSum, findAllPairOfSum
 
 # Max sum for rotation imports
-from MaxSum.max_sum_for_all_rotation_solution import findMaxSum
+from MaxSum.RightRotation.max_sum_for_all_rotation_solution import findMaxSum as findMaxSumRightRotation
+
+# Max sum for rotation imports
+from MaxSum.LeftRotation.max_sum_for_all_rotation_solution import findMaxSum as findMaxSumLeftRotation
 
 if __name__ == '__main__':
     arr = [4, 7, 8, 1, 3]
+    # [7, 8, 1, 3, 4]
+    # [1, 3, 4, 7, 8] 3 + 8 + 21 + 32
     key = 4
     sum = 11
     print(f'Original Array: {arr}')
@@ -28,7 +33,12 @@ if __name__ == '__main__':
     pairIndexes = findAllPairOfSum(list(arr), len(arr), sum)
     print(f'Pairs of indexes matching sum={sum} in array ([-1, -1] if not found): {pairIndexes}')
 
-    # Find max sum for all rotation on array
+    # Find max sum for all right rotation on array
     # Technique 1
-    maxRotationSum = findMaxSum(list(arr), len(arr))
-    print(f'Max sum for all rotation and number of rotation required in array: {maxRotationSum}')
+    maxRightRotationSum = findMaxSumRightRotation(list(arr), len(arr))
+    print(f'Max sum for all Right rotation and number of rotation required in array: {maxRightRotationSum}')
+
+    # Find max sum for all left rotation on array
+    # Technique 1
+    maxLeftRotationSum = findMaxSumLeftRotation(list(arr), len(arr))
+    print(f'Max sum for all Left rotation and number of rotation required in array: {maxLeftRotationSum}')
