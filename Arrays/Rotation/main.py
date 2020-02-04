@@ -7,6 +7,9 @@ from Left.reversal_algorithm_solution import rotate as reversalRotate
 # cyclic rotation imports
 from Cyclic.cyclic_rotation_solution import cyclicRotate
 
+# print left rotations on array
+from Left.print_different_rotation_solution import printLeftRotation
+
 # main function to try and understand different rotation techniques on array
 if __name__ == '__main__':
     arr = [1, 3, 4, 6, 7]
@@ -35,3 +38,8 @@ if __name__ == '__main__':
     # Technique 1
     cyclicRotatedArray = cyclicRotate(list(arr), len(arr))
     print(f'Cyclic Rotated Array: {cyclicRotatedArray}')
+
+    # Print Left Rotation
+    # Technique 1
+    print(f'Left Rotated Array by {roatationBy}')
+    printLeftRotation(list(arr), len(arr), roatationBy)
