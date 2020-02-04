@@ -3,6 +3,7 @@ from math import floor
 # Find rotation count(k) on sorted as well as rotated array using binary search
 # Time Complexity: O(log n)
 # Auxiliary Space Complexity: O(1)
+# This same algorithm can be dissolved into finding the minimum element in the array
 ######### NOTE: This algorithm will not work if all elements in the array are not distinct ######### 
 def findRotationCount(arr, startIndex, endIndex):
     if startIndex <= endIndex:

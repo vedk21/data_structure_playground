@@ -7,8 +7,11 @@ from Left.reversal_algorithm_solution import rotate as reversalRotate
 # cyclic rotation imports
 from Cyclic.cyclic_rotation_solution import cyclicRotate
 
-# print left rotations on array
+# print left rotations on array imports
 from Left.print_different_rotation_solution import printLeftRotation
+
+# Right rotation imports
+from Right.reversal_algorithm_solution import rotate as rightReversalRotate
 
 # main function to try and understand different rotation techniques on array
 if __name__ == '__main__':
@@ -43,3 +46,9 @@ if __name__ == '__main__':
     # Technique 1
     print(f'Left Rotated Array by {roatationBy}')
     printLeftRotation(list(arr), len(arr), roatationBy)
+    print()
+
+    # Right Rotation
+    # Technique 1
+    rightReversalRotatedArray = rightReversalRotate(list(arr), len(arr), roatationBy)
+    print(f'Right Rotated Array using reversal technique: {rightReversalRotatedArray}')
