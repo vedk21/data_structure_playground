@@ -10,8 +10,11 @@ from MaxSum.RightRotation.max_sum_for_all_rotation_solution import findMaxSum as
 # Max sum for rotation imports
 from MaxSum.LeftRotation.max_sum_for_all_rotation_solution import findMaxSum as findMaxSumLeftRotation
 
+# Find rotation count(k)
+from Binary.find_rotation_count_solution import findRotationCount
+
 if __name__ == '__main__':
-    arr = [4, 7, 8, 1, 3]
+    arr = [7, 8, 1, 3, 4]
     # [7, 8, 1, 3, 4]
     # [1, 3, 4, 7, 8] 3 + 8 + 21 + 32
     key = 4
@@ -42,3 +45,8 @@ if __name__ == '__main__':
     # Technique 1
     maxLeftRotationSum = findMaxSumLeftRotation(list(arr), len(arr))
     print(f'Max sum for all Left rotation and number of rotation required in array: {maxLeftRotationSum}')
+
+    # Find right rotation count(k) on array
+    # Technique 1
+    rotationCount = findRotationCount(list(arr), 0, len(arr) - 1)
+    print(f'Right rotation count(k) in rotated array: {rotationCount}')
