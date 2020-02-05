@@ -13,8 +13,11 @@ from MaxSum.LeftRotation.max_sum_for_all_rotation_solution import findMaxSum as 
 # Find rotation count(k)
 from Binary.find_rotation_count_solution import findRotationCount
 
+# Find rotation for max hamming distance
+from HammingDistance.rotation_for_max_hamming_distance_solution import findMaxHammingDistance
+
 if __name__ == '__main__':
-    arr = [7, 8, 1, 3, 4]
+    arr = [7, 1, 1, 1, 4]
     # [7, 8, 1, 3, 4]
     # [1, 3, 4, 7, 8] 3 + 8 + 21 + 32
     key = 4
@@ -50,3 +53,8 @@ if __name__ == '__main__':
     # Technique 1
     rotationCount = findRotationCount(list(arr), 0, len(arr) - 1)
     print(f'Right rotation count(k) in rotated array: {rotationCount}')
+
+    # Find max hamming disatnce and left rotation count
+    # Technique 1
+    hammingDistanceRotation = findMaxHammingDistance(list(arr), len(arr))
+    print(f'Left rotation and max hamming distance is: {hammingDistanceRotation}')
