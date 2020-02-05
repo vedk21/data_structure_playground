@@ -16,12 +16,17 @@ from Binary.find_rotation_count_solution import findRotationCount
 # Find rotation for max hamming distance
 from HammingDistance.rotation_for_max_hamming_distance_solution import findMaxHammingDistance
 
+# Find element at index for number of rotations
+from Binary.element_at_index_for_number_of_rotation_solution import findElement
+
 if __name__ == '__main__':
     arr = [7, 1, 1, 1, 4]
     # [7, 8, 1, 3, 4]
     # [1, 3, 4, 7, 8] 3 + 8 + 21 + 32
     key = 4
     sum = 11
+    queries = [(0, 3), (1, 3)]
+    index = 0
     print(f'Original Array: {arr}')
 
     # Binary Search on rotated and sorted array
@@ -58,3 +63,8 @@ if __name__ == '__main__':
     # Technique 1
     hammingDistanceRotation = findMaxHammingDistance(list(arr), len(arr))
     print(f'Left rotation and max hamming distance is: {hammingDistanceRotation}')
+
+    # Find element at index after series of rotations
+    # Technique 1
+    elementAtIndex = findElement(list(arr), len(arr), queries, index)
+    print(f'Element at index {index} after these series of rotations {queries}(-999999 if inputs are wrong): {elementAtIndex}')
