@@ -4,6 +4,9 @@ import array as Array
 # Pattern arr[i] = i imports
 from Pattern.index_at_element_pattern_solution import arrangeUsingIteration, arrangeUsingSwap
 
+# Pattern arr[i] >= arr[j] even positions, j < i
+from Pattern.element_even_position_odd_position_solution import arrange as arrangeEvenOdd
+
 # helper function
 def printArray(arr, msg):
     print(msg, end="")
@@ -26,3 +29,8 @@ if __name__ == '__main__':
     # Technique 2
     indexArrangedArraySwap = arrangeUsingSwap(arr, len(arr))
     printArray(indexArrangedArraySwap, 'Index element arranged array using swap technique is: ')
+
+    # Arrange array such that arr[i] >= arr[j] if i is even and arr[i] <= arr[j] if i is odd, i > j
+    # Technique 1
+    evenOddArrangedArray = arrangeEvenOdd(arr, len(arr))
+    printArray(evenOddArrangedArray, 'Elements arranged according to even odd positions: ')
