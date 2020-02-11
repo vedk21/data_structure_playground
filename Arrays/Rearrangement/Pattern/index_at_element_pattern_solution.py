@@ -1,6 +1,14 @@
 # Rearrange array such that arr[i] = i and if element is not present in array show -1
 # Time Complexity: O(n)
 # Auxiliary Space Complexity: O(1)
+
+# helper functions
+def swap(arr, a, b):
+    temp = arr[b]
+    arr[b] = arr[a]
+    arr[a] = temp
+    return arr
+
 def arrangeUsingIteration(arr, size):
     for i in range(size):
         # check if current element is not -1 or i
@@ -46,9 +54,10 @@ def arrangeUsingSwap(arr, size):
                 # check if element is out of array bound
                 if arr[arr[i]] >= 0 and arr[arr[i]] < size:
                     # swap elements
-                    arr[i], arr[arr[i]] = arr[arr[i]], arr[i]
+                    arr = swap(arr, i, arr[i])
                 else:
                     arr[arr[i]] = arr[i]
+                    arr[i] = -1
             else:
                 i += 1
         else:
