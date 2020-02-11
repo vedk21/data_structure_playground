@@ -2,7 +2,7 @@
 import numpy as np
 
 # array movement imports
-from Movement.move_all_zeroes_at_end_solution import moveZeroesAtEnd
+from Movement.move_all_zeroes_at_end_solution import moveZeroesAtEnd, moveZeroesAtEndUsingSwap
 
 # helper function
 def printArray(arr, msg):
@@ -23,3 +23,7 @@ if __name__ == '__main__':
     # Technique 1
     movedZeroesArray = moveZeroesAtEnd(np.copy(arr), len(arr))
     printArray(movedZeroesArray, 'After moving all zeroes at the end of array: ')
+
+    # Technique 2
+    movedZeroesArrayUsingSwap = moveZeroesAtEndUsingSwap(np.copy(arr), len(arr))
+    printArray(movedZeroesArrayUsingSwap, 'After moving all zeroes at the end of array using swap technique: ')

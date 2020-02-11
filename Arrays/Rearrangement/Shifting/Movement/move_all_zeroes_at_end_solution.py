@@ -2,6 +2,11 @@
 # Time Complexity: O(n)
 # Auxiliary Space Complexity: O(1)
 
+# helper functions
+def swap(arr, a, b):
+    arr[a], arr[b] = arr[b], arr[a]
+    return arr
+
 def moveZeroesAtEnd(arr, size):
     count = 0
 
@@ -16,4 +21,15 @@ def moveZeroesAtEnd(arr, size):
         arr[count] = 0
         count += 1
 
+    return arr
+
+def moveZeroesAtEndUsingSwap(arr, size):
+    count = 0
+
+    for i in range(size):
+        # all non-zero element set to the front side of array
+        if arr[i] != 0:
+            swap(arr, i, count)
+            count += 1
+    
     return arr
