@@ -20,7 +20,7 @@ def printArray(arr, msg):
         else:
             print(arr[i], end=']\n')
 
-# main function to try and understand different rotation techniques on array
+# main function to try and understand different rearrangement techniques on array
 if __name__ == '__main__':
     # arr = Array.array('i', [-1, 3, 5, 8, -1, 0])
     arr = np.array([-1, 3, 5, 8, -1, 0], dtype='int')
