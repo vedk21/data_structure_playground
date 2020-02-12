@@ -3,6 +3,7 @@ import numpy as np
 
 # array movement imports
 from Movement.move_all_zeroes_at_end_solution import moveZeroesAtEnd, moveZeroesAtEndUsingSwap
+from Movement.double_element_and_move_all_zero_to_end_solution import doubleAndMoveZeroes
 
 # array group imports
 from Group.min_swaps_to_group_numbers_less_or_equal_k_solution import groupElementsSwap, groupElements
@@ -20,7 +21,7 @@ def printArray(arr, msg):
 
 # main function to try and understand different rearrangement techniques on array
 if __name__ == '__main__':
-    arr = np.array([5, -1, 0, -3, 8, 0], dtype='int')
+    arr = np.array([5, 5, -1, 0, -3, 8, 0], dtype='int')
     search = 4
     printArray(arr, 'Original Array: ')
 
@@ -33,7 +34,7 @@ if __name__ == '__main__':
     movedZeroesArrayUsingSwap = moveZeroesAtEndUsingSwap(np.copy(arr), len(arr))
     printArray(movedZeroesArrayUsingSwap, 'After moving all zeroes at the end of array using swap technique: ')
 
-    # Move all zeroes at the end of array
+    # Min swaps required to group all elements leeser than or equal to 'k'
     # Technique 1
     minSwapRequired = groupElementsSwap(np.copy(arr), len(arr), search)
     print(f'Min swaps required to group all elements leeser than or equal to {search}: ', minSwapRequired)
@@ -46,3 +47,8 @@ if __name__ == '__main__':
     # Technique 1
     groupPositiveNegative = groupPositiveAndNegative(np.copy(arr), len(arr))
     printArray(groupPositiveNegative, 'After moving all negatives before positives: ')
+
+    # Double the number if its same as next and non-zero and then move all zeroes at the end
+    # Technique 1
+    doubleAndMoveZeroesAtEnd = doubleAndMoveZeroes(np.copy(arr), len(arr))
+    printArray(doubleAndMoveZeroesAtEnd, 'Double the number if its same as next and non-zero and then move all zeroes at the end: ')
