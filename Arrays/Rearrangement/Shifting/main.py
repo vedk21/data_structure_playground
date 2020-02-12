@@ -6,6 +6,7 @@ from Movement.move_all_zeroes_at_end_solution import moveZeroesAtEnd, moveZeroes
 
 # array group imports
 from Group.min_swaps_to_group_numbers_less_or_equal_k_solution import groupElementsSwap, groupElements
+from Group.positive_and_negative_group_solution import groupPositiveAndNegative
 
 # helper function
 def printArray(arr, msg):
@@ -19,7 +20,7 @@ def printArray(arr, msg):
 
 # main function to try and understand different rearrangement techniques on array
 if __name__ == '__main__':
-    arr = np.array([5, 2, 0, 4, 8, 0], dtype='int')
+    arr = np.array([5, -1, 0, -3, 8, 0], dtype='int')
     search = 4
     printArray(arr, 'Original Array: ')
 
@@ -40,3 +41,8 @@ if __name__ == '__main__':
     # Technique 2
     groupedElementsLessEqualK = groupElements(np.copy(arr), len(arr), search)
     printArray(groupedElementsLessEqualK, f'Array after grouping all elements leeser than or equal to {search} together: ')
+
+    # Group all positive and negative numbers such that all negative numbers are before positive numbers
+    # Technique 1
+    groupPositiveNegative = groupPositiveAndNegative(np.copy(arr), len(arr))
+    printArray(groupPositiveNegative, 'After moving all negatives before positives: ')
