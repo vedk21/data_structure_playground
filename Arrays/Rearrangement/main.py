@@ -10,6 +10,9 @@ from Pattern.element_even_position_odd_position_solution import arrange as arran
 # Pattern alternate positive and negative elements
 from Pattern.alternate_positive_negative_numbers_solution import arrange as arrangeAlternatePosNeg, arrangeInSeq as arrangeAlternatePosNegSeq
 
+# Pattern smallest element and then largest element and so on...
+from Pattern.smallest_largest_so_on_solution import arrange as arrangeSmallestLargestSoOn
+
 # helper function
 def printArray(arr, msg):
     print(msg, end="")
@@ -49,3 +52,8 @@ if __name__ == '__main__':
     # Technique 1
     alternatePosNegArrangedSeqArray = arrangeAlternatePosNegSeq(np.copy(arr), len(arr))
     printArray(alternatePosNegArrangedSeqArray, 'Elements after arranging alternate positive and negative (maintaining original sequence): ')
+    
+    # Arrange array such that smallest number and then largest number so on...
+    # Technique 1
+    smallestLargestSoOn = arrangeSmallestLargestSoOn(np.copy(arr), len(arr))
+    printArray(smallestLargestSoOn, 'Smallest, largest, second smallest, second largest and so on...: ')
