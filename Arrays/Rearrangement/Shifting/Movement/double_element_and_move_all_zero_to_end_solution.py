@@ -1,4 +1,5 @@
 # internal imports
+# pylint: disable=relative-beyond-top-level
 from .move_all_zeroes_at_end_solution import moveZeroesAtEndUsingSwap
 
 # If arr[i] == arr[i+1] then double arr[i] and set arr[i] = 0 for every non-zero element
