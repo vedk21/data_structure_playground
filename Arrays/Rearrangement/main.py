@@ -14,7 +14,7 @@ from Pattern.alternate_positive_negative_numbers_solution import arrange as arra
 from Pattern.smallest_largest_so_on_solution import arrange as arrangeSmallestLargestSoOn
 
 # Pattern to reorder array according to indexes array
-from Pattern.reorder_array_according_to_index_array_solution import reorderUsingArray
+from Pattern.reorder_array_according_to_index_array_solution import reorderUsingArray, reorderUsingSort
 
 # helper function
 def printArray(arr, msg):
@@ -29,8 +29,8 @@ def printArray(arr, msg):
 # main function to try and understand different rearrangement techniques on array
 if __name__ == '__main__':
     # arr = Array.array('i', [-1, 3, 5, 8, -1, 0])
-    arr = np.array([-1, 3, 5, 8, -1, 0], dtype='int')
-    indexes = np.array([2, 0, 5, 4, 1, 3], dtype='int')
+    arr = np.array([5, 3, -1, 8, -1, 0], dtype='int')
+    indexes = np.array([5, 0, 1, 2, 3, 4], dtype='int')
     printArray(arr, 'Original Array: ')
     printArray(indexes, 'Indexes Array: ')
 
@@ -65,5 +65,9 @@ if __name__ == '__main__':
     
     # Reorder array according to indexes array
     # Technique 1
-    reorderedArrayUsingExtraArray = reorderUsingArray(np.copy(arr), len(arr), indexes)
+    reorderedArrayUsingExtraArray = reorderUsingArray(np.copy(arr), len(arr), np.copy(indexes))
     printArray(reorderedArrayUsingExtraArray, 'Reordered array according to index array using extra array: ')
+
+    # Technique 2
+    reorderedArrayUsingSort = reorderUsingSort(np.copy(arr), len(arr), np.copy(indexes))
+    printArray(reorderedArrayUsingSort, 'Reordered array according to index array using sorting: ')
