@@ -13,6 +13,9 @@ from Pattern.alternate_positive_negative_numbers_solution import arrange as arra
 # Pattern smallest element and then largest element and so on...
 from Pattern.smallest_largest_so_on_solution import arrange as arrangeSmallestLargestSoOn
 
+# Pattern to reorder array according to indexes array
+from Pattern.reorder_array_according_to_index_array_solution import reorderUsingArray
+
 # helper function
 def printArray(arr, msg):
     print(msg, end="")
@@ -27,7 +30,9 @@ def printArray(arr, msg):
 if __name__ == '__main__':
     # arr = Array.array('i', [-1, 3, 5, 8, -1, 0])
     arr = np.array([-1, 3, 5, 8, -1, 0], dtype='int')
+    indexes = np.array([2, 0, 5, 4, 1, 3], dtype='int')
     printArray(arr, 'Original Array: ')
+    printArray(indexes, 'Indexes Array: ')
 
     # Arrange array such that arr[i] = i or else -1
     # Technique 1
@@ -57,3 +62,8 @@ if __name__ == '__main__':
     # Technique 1
     smallestLargestSoOn = arrangeSmallestLargestSoOn(np.copy(arr), len(arr))
     printArray(smallestLargestSoOn, 'Smallest, largest, second smallest, second largest and so on...: ')
+    
+    # Reorder array according to indexes array
+    # Technique 1
+    reorderedArrayUsingExtraArray = reorderUsingArray(np.copy(arr), len(arr), indexes)
+    printArray(reorderedArrayUsingExtraArray, 'Reordered array according to index array using extra array: ')
