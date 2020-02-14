@@ -16,6 +16,9 @@ from Pattern.smallest_largest_so_on_solution import arrange as arrangeSmallestLa
 # Pattern to reorder array according to indexes array
 from Pattern.reorder_array_according_to_index_array_solution import reorderUsingArray, reorderUsingSort
 
+# Pattern for largest number formed from numbers in array
+from Pattern.arrange_numbers_to_form_largest_number_solution import arrangeToFormLargestNumber
+
 # helper function
 def printArray(arr, msg):
     print(msg, end="")
@@ -71,3 +74,9 @@ if __name__ == '__main__':
     # Technique 2
     reorderedArrayUsingSort = reorderUsingSort(np.copy(arr), len(arr), np.copy(indexes))
     printArray(reorderedArrayUsingSort, 'Reordered array according to index array using sorting: ')
+
+    # Pattern for largest number formed from numbers in array
+    # Technique 1
+    largeNumberArray = np.array([3, 45, 12, 78, 9, 33, 8], dtype='int')
+    arrangeToFormLargestNumberArray = arrangeToFormLargestNumber(np.copy(largeNumberArray), len(arr))
+    print(f'The largest number formed from numbers in given array {largeNumberArray} is: {arrangeToFormLargestNumberArray}')
