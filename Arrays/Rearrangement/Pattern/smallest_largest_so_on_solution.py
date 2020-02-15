@@ -27,3 +27,28 @@ def arrange(arr, size):
         iterator += 2
 
     return arr
+
+# Time Complexity: O(n(log n))
+# Auxiliary Space Complexity: O(1)
+def arrangeWithoutExtraSpace(arr, size):
+    # make use of remainder and quotient logic
+    # Formula: a + b * max = result
+    # a = result % max
+    # b = result / max
+
+    max_idx = size - 1
+    min_idx = 0
+    max_elment = arr[size-1] + 1
+
+    for i in range(size):
+        if i % 2 == 0:
+            arr[i] += (arr[max_idx] % max_elment) * max_elment
+            max_idx -= 1
+        else:
+            arr[i] += (arr[min_idx] % max_elment) * max_elment
+            min_idx += 1
+
+    for i in range(size):
+        arr[i] /= max_elment
+
+    return arr

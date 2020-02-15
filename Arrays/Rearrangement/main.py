@@ -11,7 +11,7 @@ from Pattern.element_even_position_odd_position_solution import arrange as arran
 from Pattern.alternate_positive_negative_numbers_solution import arrange as arrangeAlternatePosNeg, arrangeInSeq as arrangeAlternatePosNegSeq
 
 # Pattern smallest element and then largest element and so on...
-from Pattern.smallest_largest_so_on_solution import arrange as arrangeSmallestLargestSoOn
+from Pattern.smallest_largest_so_on_solution import arrange as arrangeSmallestLargestSoOn, arrangeWithoutExtraSpace
 
 # Pattern to reorder array according to indexes array
 from Pattern.reorder_array_according_to_index_array_solution import reorderUsingArray, reorderUsingSort
@@ -68,6 +68,11 @@ if __name__ == '__main__':
     # Technique 1
     smallestLargestSoOn = arrangeSmallestLargestSoOn(np.copy(arr), len(arr))
     printArray(smallestLargestSoOn, 'Smallest, largest, second smallest, second largest and so on...: ')
+
+    # Technique 2
+    sortedArray = np.array([1, 2, 3, 4, 5, 6, 7], dtype='int')
+    smallestLargestSoOnWithoutExtraSpace = arrangeWithoutExtraSpace(np.copy(sortedArray), len(sortedArray))
+    printArray(smallestLargestSoOnWithoutExtraSpace, f'{sortedArray} Smallest, largest, second smallest, second largest and so on without using extra space: ')
     
     # Reorder array according to indexes array
     # Technique 1
@@ -81,10 +86,10 @@ if __name__ == '__main__':
     # Pattern for largest number formed from numbers in array
     # Technique 1
     largeNumberArray = np.array([3, 45, 12, 78, 9, 33, 8], dtype='int')
-    arrangeToFormLargestNumberArray = arrangeToFormLargestNumber(np.copy(largeNumberArray), len(arr))
+    arrangeToFormLargestNumberArray = arrangeToFormLargestNumber(np.copy(largeNumberArray), len(largeNumberArray))
     print(f'The largest number formed from numbers in given array {largeNumberArray} is: {arrangeToFormLargestNumberArray}')
     
     # Pattern arranging i at arr[arr[i]]
     # Technique 1
-    arrangeIndexWiseArray = arrangeIndexWise(np.copy(indexes), len(arr))
+    arrangeIndexWiseArray = arrangeIndexWise(np.copy(indexes), len(indexes))
     printArray(arrangeIndexWiseArray, f'After arranging array {indexes}, index i at arr[arr[i]]: ')
